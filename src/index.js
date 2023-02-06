@@ -122,7 +122,9 @@ const createListItem = (weather) => {
 const setDefaultLocationsWeather = async () => {
   const weather = await getDefaultLocationsWeather();
 
-  const locationsWeatherList = [...weather].map((item) => createListItem(item));
+  const locationsWeatherList = [...weather]
+    .map((item) => createListItem(item))
+    .join("");
 
   const container = document
     .querySelector("#default-locations")
